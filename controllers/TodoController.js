@@ -52,7 +52,7 @@ module.exports = class TodoController{
 
     delete(req, res){
         const id = req.params.id;
-        console.log("Params id ---- ", req.params.id);
+        
         Todo.destroy({ 
             where : { id : id }
             })
@@ -61,7 +61,7 @@ module.exports = class TodoController{
                     res.send(
                         {
                             message: num === 1 ? 
-                                "Todo was deleted successfully!" :
+                                "Todo with an id: " + id + "was deleted successfully!" :
                                 `Cannot delete Todo with id=${id}. Maybe Todo was not found!`
                         }
                     );
