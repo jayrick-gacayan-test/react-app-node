@@ -19,7 +19,7 @@ app.use(
 const db = require("../models");
 
 app.use(
-    express.static(path.resolve(__dirname, "../client/build"))
+    express.static(path.resolve(__dirname, "../../react-app-with-backend/build"))
 );
 const TodoController = require("../controllers/TodoController");
 //db.sequelize.sync({ force: false });
