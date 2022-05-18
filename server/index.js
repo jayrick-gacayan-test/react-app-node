@@ -17,7 +17,7 @@ app.use(
 );
 
 app.use(
-    express.static(path.resolve(__dirname, "../../react-app-with-backend/build"))
+    express.static(path.resolve(__dirname, "../react-app-with-backend/build"))
 );
 
 const db = require("../models");
@@ -69,12 +69,13 @@ app.put('/api/todos/:id',
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../react-app-with-backend/build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../react-app-with-backend/build', 'index.html'));
 });
 
 app.listen(
     PORT,
     () => {
         console.log(`Server listening on ${ PORT }`);
+        console.log('Directory --- ' + __dirname + "../react-app-with-backend/build");
     }
 );
