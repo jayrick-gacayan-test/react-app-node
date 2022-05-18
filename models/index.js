@@ -6,7 +6,12 @@ const sequelize = new Sequelize(production.DATABASE,
       production.USER, production.PASSWORD, {
   host: production.HOST,
   dialect: production.dialect,
-
+  ssl: true,
+  dialectOptions: {
+    ssl: {
+      require: true
+    }
+  },
   pool: {
     max: production.pool.max,
     min: production.pool.min,
