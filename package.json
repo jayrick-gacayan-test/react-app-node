@@ -10,6 +10,9 @@
     "dev": "concurrently \"npm run server\" \"npm run react-app-with-backend\"",
     "build": "cd react-app-with-backend && npm install && npm run build"
   },
+  "engines": {
+    "node": "16.14.2"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
