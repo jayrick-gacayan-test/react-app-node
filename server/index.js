@@ -21,10 +21,10 @@ app.use(
 );
 
 const db = require("../models");
-
+db.sequelize.sync();
 
 const TodoController = require("../controllers/TodoController");
-db.sequelize.sync();
+
 
 const PORT = process.env.PORT || 3001;
 
