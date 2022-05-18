@@ -8,7 +8,7 @@
     "server": "nodemon server/index.js",
     "client": "npm start --prefix react-app-with-backend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd react-app-with-backend && npm install && npm run build" 
+    "build": "npm run build --prefix react-app-with-backend"
   },
   "keywords": [],
   "author": "",
