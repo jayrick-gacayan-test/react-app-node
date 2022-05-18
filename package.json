@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "server": "nodemon server/index.js",
+    "start": "node server",
+    "server": "nodemon server",
     "client": "npm start --prefix react-app-with-backend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run react-app-with-backend\"",
     "build": "cd react-app-with-backend && npm install && npm run build"
   },
   "keywords": [],
