@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { baseURL } from '../../utils/baseURL';
 import axios from 'axios';
 const HomePage = () => {
     const [ message, setMessage ] = useState('');
     
     useEffect(
         () => {
-            axios.get('/api/hello')
+            axios.get(baseURL + 'api/hello')
                 .then((response) => setMessage(response.data.message))
                 .catch((e) => setMessage(e));
         }
