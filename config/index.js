@@ -13,10 +13,10 @@ module.exports = {
     }
   },
   production: {
-    HOST: "localhost",
-    USER: "postgres",
+    HOST: "ec2-44-195-169-163.compute-1.amazonaws.com",
+    USER: "iqnxeoldobxprt",
     PASSWORD: "123",
-    DATABASE: "test",
+    DATABASE: "d83a54g70ldnl1",
     dialect: "postgres",
     pool: {
       max: 5,
