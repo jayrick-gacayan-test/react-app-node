@@ -67,6 +67,11 @@ app.put('/api/todos/:id',
     new TodoController().update
 );
 
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../../react-app-with-backend/build', 'index.html'));
+});
+
 app.listen(
     PORT,
     () => {
