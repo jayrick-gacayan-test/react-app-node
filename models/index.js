@@ -3,7 +3,7 @@ const dbConfig = require("../config");
 const Sequelize = require("sequelize");
 const { production } = require("../config");
 const sequelize = new Sequelize(production.DATABASE, 
-      production.dbConfig.USER, production.PASSWORD, {
+      production.USER, production.PASSWORD, {
   host: production.HOST,
   dialect: production.dialect,
 
