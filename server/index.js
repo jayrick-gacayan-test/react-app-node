@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const cors = require('cors');
 const app = express();
 
@@ -16,6 +17,10 @@ app.use(
 );
 
 const db = require("../models");
+
+app.use(
+    express.static(path.resolve(__dirname, "../client/build"))
+);
 const TodoController = require("../controllers/TodoController");
 //db.sequelize.sync({ force: false });
 

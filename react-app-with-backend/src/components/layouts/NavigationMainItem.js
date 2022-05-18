@@ -3,15 +3,13 @@ import { NavLink, useLocation } from 'react-router-dom';
 const NavigationMainItem = (props) => {
     const location = useLocation();
     
-
-    
     useEffect(()=>{
             const link = document.querySelector("li.nav-item a[href='" + location.pathname + "']");
             const li = link.closest('li');
             li.classList.add("active");
         },
 
-    [location]);
+    [ location ]);
 
     const handleListClick = (event) =>{
         const target = event.target;
