@@ -9,7 +9,8 @@ const sequelize = new Sequelize(production.DATABASE,
   ssl: true,
   dialectOptions: {
     ssl: {
-      require: true
+      require: true,
+      rejectUnauthorized: false
     }
   },
   pool: {
