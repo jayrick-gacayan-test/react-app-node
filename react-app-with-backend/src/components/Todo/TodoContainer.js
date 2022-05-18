@@ -58,7 +58,7 @@ const TodoContainer = () => {
         () => {
             function fetchTodos(){
                 axios({
-                        url: baseURL + "api/todos",
+                        url: baseURL + "/api/todos",
                         method: "GET"
                     })
                     .then((res) => {
@@ -78,7 +78,7 @@ const TodoContainer = () => {
     const addTodo = (todo) => {
         const { title, name } = todo;
         
-        axiosFetch(baseURL + "api/todos/create",
+        axiosFetch(baseURL + "/api/todos/create",
                     "POST",
                     { title, name })
             .then((res) => {
@@ -95,7 +95,7 @@ const TodoContainer = () => {
     }
 
     const deleteTodo = (id) => {
-        axiosFetch(baseURL + "api/todos/" + id,
+        axiosFetch(baseURL + "/api/todos/" + id,
                     "DELETE")
             .then((res) => {
                 alert(res.data.message);
@@ -108,7 +108,7 @@ const TodoContainer = () => {
     const handleTodoTask = (id) => {
         const todoCurrent = todos.filter((todo) => { return todo.id === id; });
         
-        axiosFetch(baseURL + "api/todos/" + id,
+        axiosFetch(baseURL + "/api/todos/" + id,
                     "PUT",
                     { completed : !todoCurrent[0].completed })
             .then((res) => {
@@ -127,7 +127,7 @@ const TodoContainer = () => {
         
         const { title, name } = todo;
 
-        axiosFetch(baseURL + "api/todos/" + todo.id,
+        axiosFetch(baseURL + "/api/todos/" + todo.id,
                     "PUT",
                     { name, title })
             .then((res) => {

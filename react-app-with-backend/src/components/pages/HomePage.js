@@ -6,7 +6,7 @@ const HomePage = () => {
     
     useEffect(
         () => {
-            axios.get(baseURL + 'api/hello')
+            axios.get(baseURL + '/api/hello')
                 .then((response) => setMessage(response.data.message))
                 .catch((e) => setMessage(e));
         }
