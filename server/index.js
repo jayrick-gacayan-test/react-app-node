@@ -24,7 +24,7 @@ const db = require("../models");
 
 
 const TodoController = require("../controllers/TodoController");
-//db.sequelize.sync({ force: false });
+db.sequelize.sync({ force: false });
 
 const PORT = process.env.PORT || 3001;
 
