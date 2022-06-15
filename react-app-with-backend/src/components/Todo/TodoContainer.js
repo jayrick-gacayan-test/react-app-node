@@ -21,7 +21,7 @@ const TodoContainer = () => {
     
     const [ editing, setEditing ] = useState(false); // checks if editing is enable
     const [ currentTodo, setCurrentTodo ] = useState(initialState); // getting the current todo
-    
+    const [ loading, isLoading ] = useState(false);
     const reducer = (state, action) => {
         switch(action.type){
             case "ADD":
@@ -69,7 +69,16 @@ const TodoContainer = () => {
                     });
             }//end of function fetchTodos();
 
-            fetchTodos();
+            isLoading(true)
+            
+            const fetchTodosTimeout = setTimeout(()=> {
+                fetchTodos();
+                isLoading(false);
+            }, 2000);
+
+            return () => {
+                clearTimeout(fetchTodosTimeout);
+            }
         },
         [ ]
     );
